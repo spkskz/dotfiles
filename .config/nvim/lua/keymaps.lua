@@ -13,8 +13,8 @@ keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
+keymap.set("n", "<leader>ss", ":split<Return>", opts)
+keymap.set("n", "<leader>sv", ":vsplit<Return>", opts)
 
 -- switch window
 keymap.set("n", "sh", "<C-w>h")
@@ -27,3 +27,5 @@ keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
 
+-- Neotree
+keymap.set("n", "<C-b>", "<Cmd>Neotree toggle<CR>")

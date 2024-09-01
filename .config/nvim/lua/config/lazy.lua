@@ -14,24 +14,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {    
-  {   
-    "nvim-telescope/telescope.nvim",
-    dependencies = { 'nvim-lua/plenary.nvim' },
+require("lazy").setup({
+  spec = { 
+    { import = "plugins" }, 
   },
-  {
-    "nvim-treesitter/nvim-treesitter", 
-    build = ":TSUpdate",
-  },
-  {
-    "ellisonleao/gruvbox.nvim", priority = 1000, config = true,
-  },
---  { import = "plugins" },
-};
-
-local opts = {
-  checker = { enabled = true },
-}
-
-require("lazy").setup(plugins, opts)
+  checker = { enabled = true }
+})
 
