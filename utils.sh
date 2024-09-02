@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo_with_prompt () {
-	PROMPT="${PROMPT:-'[ SPDotFiles ]'}"
+	PROMPT="${PROMPT:-'[ Dotfiles ]'}"
 	echo "$PROMPT $@"
 }
 
