@@ -1,38 +1,47 @@
-vim.g.mapleader = " "
+local g = vim.g
+local opt = vim.opt
 
-vim.scriptencoding = "utf-8"
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
+-- Global
+g.mapleader = " "
+g.maplocalleader = " "
 
-vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+-- General
+opt.mouse = 'a'
+opt.swapfile = false
+opt.completeopt = 'menuone,noinsert,noselect'
+opt.cmdheight = 0
+opt.title = true
+opt.scrolloff = 10
+opt.inccommand = 'split'
 
-vim.opt.number = true
-vim.opt.title = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.hlsearch = true
-vim.opt.backup = false
-vim.opt.showcmd = true
-vim.opt.cmdheight = 2
-vim.opt.laststatus = 0
-vim.opt.scrolloff = 10
-vim.opt.inccommand = "split"
-vim.opt.ignorecase = true
-vim.opt.smarttab = true
-vim.opt.breakindent = true
-vim.opt.wrap = false
-vim.opt.backspace = {"start", "eol", "indent"}
-vim.opt.path:append({"**"})
-vim.opt.wildignore:append({"*/node_modules/*"})
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.splitkeep = "cursor"
-vim.opt.mouse = "a"
+-- Neovim UI
+opt.number = true
+opt.showmatch = true
+opt.colorcolumn = '100'
+opt.splitright = true
+opt.splitbelow = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.termguicolors = true
+opt.laststatus = 3
+opt.wrap = false
+opt.signcolumn = 'yes:2'
 
-vim.opt.formatoptions:append({"r"})
+-- Tabs, indent
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.smartindent = true
+
+-- Memory, CPU
+opt.hidden = true
+opt.history = 100
+opt.lazyredraw = true
+opt.updatetime = 250
+opt.undofile = true
+opt.backup = false
+opt.redrawtime = 10000
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -41,3 +50,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+g.netrw_banner = 0
