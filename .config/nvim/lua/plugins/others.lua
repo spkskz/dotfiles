@@ -1,17 +1,30 @@
 return {
-	{
-		"VonHeikemen/fine-cmdline.nvim",
-		dependencies = {
-			{ "MunifTanjim/nui.nvim" },
-		},
-		config = function()
-			require("fine-cmdline").setup({
-				cmdline = {
-					prompt = ":",
-				},
-			})
+    {
+        "stevearc/oil.nvim",
+        ---@module 'oil'
+        ---@type oil.SetupOpts
+        opts = {
+            view_options = {
+                show_hidden = true,
+                is_always_hidden = function(name)
+                    return name == ".git" or name == "node_modules"
+                end,
+            },
+        },
+    },
+    {
+        "VonHeikemen/fine-cmdline.nvim",
+        dependencies = {
+            { "MunifTanjim/nui.nvim" },
+        },
+        config = function()
+            require("fine-cmdline").setup({
+                cmdline = {
+                    prompt = ":",
+                },
+            })
 
-			vim.keymap.set("n", ":", "<cmd>FineCmdline<CR>", { noremap = true })
-		end,
-	},
+            vim.keymap.set("n", ":", "<cmd>FineCmdline<CR>", { noremap = true })
+        end,
+    },
 }

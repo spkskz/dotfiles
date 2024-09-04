@@ -22,4 +22,4 @@ keymap.set("n", "<C-j>", function()
 end, opts)
 
 keymap.set("n", "<leader>F", vim.lsp.buf.hover)
-keymap.set("n", "<leader>pv", ":Ex<CR><CR>")
+keymap.set("n", "<leader>pv", ":Oil<CR>")
