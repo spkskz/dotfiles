@@ -11,13 +11,13 @@ keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- switch window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
+keymap.set("n", "<M-h>", "<C-w>h")
+keymap.set("n", "<M-k>", "<C-w>k")
+keymap.set("n", "<M-j>", "<C-w>j")
+keymap.set("n", "<M-l>", "<C-w>l")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
+keymap.set("n", "<C-d>", function()
   vim.diagnostic.goto_next()
 end, opts)
 
