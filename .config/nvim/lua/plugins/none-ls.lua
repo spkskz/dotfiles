@@ -5,11 +5,10 @@ return {
 
 		null_ls.setup({
 			sources = {
+				null_ls.builtins.formatting.prettierd,
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.gofumpt,
 			},
 		})
-
-		vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
 	end,
 }
