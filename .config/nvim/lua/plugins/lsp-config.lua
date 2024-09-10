@@ -72,12 +72,6 @@ return {
 
 		local ensure_installed = vim.tbl_keys(servers or {})
 
-		for i, v in ipairs(ensure_installed) do
-			if v == "ts_ls" then
-				ensure_installed[i] = "tsserver"
-			end
-		end
-
 		vim.list_extend(ensure_installed, {
 			"stylua",
 			"prettierd",
@@ -91,9 +85,6 @@ return {
 				function(server_name)
 					local server = servers[server_name] or {}
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					if server_name == "tsserver" then
-						server_name = "ts_ls"
-					end
 					require("lspconfig")[server_name].setup(server)
 				end,
 			},
