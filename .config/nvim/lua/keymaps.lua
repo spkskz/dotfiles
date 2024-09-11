@@ -21,7 +21,7 @@ keymap.set("n", "<C-d>", function()
 	vim.diagnostic.goto_next()
 end, opts)
 
-keymap.set("n", "<leader>pv", ":Oil<CR>")
+keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 keymap.set("n", "<leader>F", vim.lsp.buf.hover)
 keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
