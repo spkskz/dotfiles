@@ -28,8 +28,8 @@ init
 install_tools
 
 ln -sfnv "$PWD/.bashrc" "$HOME" || true
+ln -sfnv "$PWD/.vimrc" "$HOME" || true
 ln -sfnv "$PWD/.config/tmux" "$HOME/.config/tmux" || true
 ln -sfnv "$PWD/.config/nvim" "$HOME/.config/nvim" || true
-ln -sfnv "$PWD/.config/alacritty" "$HOME/.config/alacritty" || true
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
